@@ -1,7 +1,7 @@
-from .Apps import SECRET_KEY, DEBUG, ALLOWED_HOSTS, INSTALLED_APPS, WSGI_APPLICATION
-from .Auth import AUTH_PASSWORD_VALIDATORS, LANGUAGE_CODE, TIME_ZONE, USE_I18N, USE_TZ
-from .storage import DATABASES, STATIC_URL, STATICFILES_DIRS, DEFAULT_AUTO_FIELD, MEDIA_URL, MEDIA_ROOT, EMAIL_BACKEND, EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_USE_TLS
-from .Middlewares import MIDDLEWARE, ROOT_URLCONF, TEMPLATES
+from .Apps import *
+from .Auth import *
+from .storage import *
+from .Middlewares import *
 
 """
     Importing all the configs from diferent files

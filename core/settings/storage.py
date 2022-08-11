@@ -1,16 +1,24 @@
 # ------------ Libraries --------------------
 import os
 from pathlib import Path
+import dj_database_url
 # Base Dir of the entire project
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-# Database Configs
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'sample123',
+            'USER': 'postgres',
+            'PASSWORD': 'Seque1505',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
 }
+
+db_from_env = dj_database_url.config()
+
+DATABASES['default'].update(db_from_env)
 
 # Static files URL (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
@@ -39,6 +47,15 @@ EMAIL_USE_TLS = True
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": "dgb2lhvj4", 
+    "API_KEY": "595827643384846", 
+    "API_SECRET": "IJXsJ9FtVsQvzbm3xBHczEV0jUs" 
+}
+
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 """
 MIT License

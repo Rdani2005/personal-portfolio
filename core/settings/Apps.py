@@ -3,7 +3,7 @@ SECRET_KEY = 'django-insecure-teuvq7wkkf_9^l8*90d3@^wl5%i+v58*h)9uxrr0xk$8d8pt+m
 # Development
 DEBUG = True
 # This hosts are allowed to use the app
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 """
 Apps that we are using
@@ -18,6 +18,10 @@ INSTALLED_APPS = [
     # Own apps
     'projects', # Use to see the projects
     'contact', # Use to contact me
+    "storages",
+    # cloudinary
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
