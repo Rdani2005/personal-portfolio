@@ -1,27 +1,45 @@
-"""All Auth configs"""
+# ------------ Libraries --------------------
+import os
+from pathlib import Path
+# Base Dir of the entire project
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+# Database Configs
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+# Static files URL (CSS, JavaScript, Images)
+STATIC_URL = 'static/'
+
+# Static files (CSS, JavaScript, Images)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
 ]
-# Location configs
-LANGUAGE_CODE = 'en-us'
+# DB Models config
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-TIME_ZONE = 'UTC'
+# Using Gmail with DJango
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-USE_I18N = True
+EMAIL_HOST = 'smtp.gmail.com'
 
-USE_TZ = True
+EMAIL_PORT = 587
+
+EMAIL_HOST_USER = 'rdani2005dev@gmail.com'
+
+EMAIL_HOST_PASSWORD = 'fcuelvfeyfkbyybo'
+
+EMAIL_USE_TLS = True
+
+# Media Files
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 """
 MIT License
 
