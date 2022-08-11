@@ -1,0 +1,72 @@
+{% extends '../base.html' %}
+{% load static %} 
+{% block title %} Home {% endblock title %} 
+{% block content %}
+<main>
+  <section
+    class="container d-flex justify-content-center align-items-center w-75 min-vh-100 my-2"
+  >
+    <div class="row w-100">
+      <div
+        class="col-lg-6 h-100 d-flex justify-content-center align-items-center"
+      >
+        <img
+          src="{% static 'images/me.jpg'%}"
+          alt="My Foto"
+          class="mx-auto w-100"
+        />
+      </div>
+      <div
+        class="col-lg-6 d-flex flex-column justify-content-center text-center align-items-center"
+      >
+        <h1>Danny Sequeira</h1>
+        <h3>Fullstack web developer</h3>
+        <div class="d-flex justify-content-around text-dark">
+          <div class="mx-2">
+            <a href="https://instagram.com/rdani2005" target="_blank" class="text-dark">
+              <ion-icon name="logo-instagram" size="large"></ion-icon>
+            </a>
+          </div>
+          <div class="mx-2">
+            <a href="https://github.com/rdani2005/" class="text-dark" target="_blank">
+              <ion-icon name="logo-github" size="large"></ion-icon>
+            </a>
+          </div>
+          <div class="mx-2">
+            <a href="https://www.linkedin.com/in/rdani2005/" class="text-dark" target="_blank">
+              <ion-icon name="logo-linkedin" size="large"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vh-100 bg-dark">
+    <div
+      class="container d-flex flex-column align-items-center justify-content-center h-100 text-white"
+    >
+      <h1 class="display-3 text-white">About me</h1>
+      <p>
+        I am a young problem solver, with great learning abilities. I love
+        learning new technologies, and delving into each of them.
+      </p>
+      <p>
+        I currently have knowledge in ReactJS, Python, GraphQL, Rest API,
+        NodeJS, Go, Java, JavaScript, TypeScript, and much more...
+      </p>
+      <div class="d-flex">
+        <a
+        href="{% static 'files/CV.pdf' %}"
+        target="_blank"
+        class="btn btn-success mx-2"
+        >Download CV</a
+      >
+      <a href="{% url "projects:projects_list" %}" class="btn btn-primary mx-2">Projects</a>
+      <a href="{% url "contact:contact_form" %}" class="btn btn-primary mx-2">Contact me</a>
+      </div>
+    </div>
+    </div>
+  </section>
+</main>
+{% endblock content %}

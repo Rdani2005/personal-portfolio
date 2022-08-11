@@ -1,0 +1,45 @@
+{% extends '../base.html' %}
+{% block title %}Contact Me!{% endblock title %}
+{% block content %}
+<main class="bg-dark vh-100">
+    <section class="container p-5 h-100 d-flex justify-content-center align-items-center">
+        <div class="card w-75 cristal text-white">
+            <div class="card-header">
+                <h3 class="text-center text-white">Contact me!</h3>
+            </div>
+            <form action="{% url 'contact:send_message' %}" method="post" class="card-body">
+                {% csrf_token %}
+                
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-success" role="alert">
+                        {{message}}
+                      </div>                      
+                    {% endfor %}
+                
+                {% endif %}
+                
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control cristal" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control cristal" id="email" name="email" required>
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="message">Message</label>
+                    <textarea type="text" class="form-control cristal" id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                
+    
+            </form>
+        </div>
+        
+    </section>
+
+
+</main>
+{% endblock content %}
