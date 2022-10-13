@@ -9,16 +9,12 @@ DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'sample123',
-            'USER': 'postgres',
+            'USER': 'rdani2005',
             'PASSWORD': 'Seque1505',
             'HOST': 'localhost',
             'PORT': '',
         }
 }
-
-db_from_env = dj_database_url.config()
-
-DATABASES['default'].update(db_from_env)
 
 # Static files URL (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
