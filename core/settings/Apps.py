@@ -18,10 +18,6 @@ INSTALLED_APPS = [
     # Own apps
     'projects', # Use to see the projects
     'contact', # Use to contact me
-    "storages",
-    # cloudinary
-    'cloudinary_storage',
-    'cloudinary',
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'

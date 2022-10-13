@@ -12,7 +12,7 @@ from django.conf.urls.static import static
     3. Contact page
 """
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('subir-archivos/', admin.site.urls),
     path('', include('projects.urls', namespace='projects')),
     path('contact/', include('contact.urls', namespace='contact')),
 ]

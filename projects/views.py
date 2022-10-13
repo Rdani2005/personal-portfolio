@@ -11,7 +11,7 @@ from .models import Project # Project query set
 """
 class HomeView(View):
     def get(self, request):
-        return render(request, 'projects/home.html')
+        return render(request, 'projects/Home.html')
 
 """
     Projects Views
