@@ -12,16 +12,12 @@ from django.conf.urls.static import static
     3. Contact page
 """
 urlpatterns = [
-    path('subir-archivos/', admin.site.urls),
+    path(settings.ADMIN_URL, admin.site.urls),
     path('', include('projects.urls', namespace='projects')),
     path('contact/', include('contact.urls', namespace='contact')),
 ]
 
-"""
-    Case we are in production
-"""
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 """
 MIT License
