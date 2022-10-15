@@ -7,7 +7,7 @@ env = environ.Env()
 
 # Base
 DEBUG = env.bool('DJANGO_DEBUG', False)
-
+ADMIN_URL = 'admin/'
 # Language and timezone
 TIME_ZONE = 'America/Mexico_City'
 LANGUAGE_CODE = 'en-us'
