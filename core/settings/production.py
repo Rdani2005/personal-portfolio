@@ -44,7 +44,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/'
+MEDIA_URL = f'/media/'
 
 # Templates
 TEMPLATES[0]['OPTIONS']['loaders'] = [  # noqa F405
